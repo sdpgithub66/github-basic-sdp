@@ -19,4 +19,4 @@ jobs:
         with:
           stable_branch: 'master'
           development_branch: 'Development'
-          allow_ff: false
+          allow_ff: false - push_token = GITHUB_TOKEN =
