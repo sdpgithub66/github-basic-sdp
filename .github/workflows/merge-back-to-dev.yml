@@ -1,24 +1,25 @@
-name: 'Nightly Merge'
+# Description: Automatically merge the stable branch(default master branch)into the development one.
+
+name: 'Auto Merge'
 
 on:
     push:
       branches:
         - master
-
 jobs:
-    nightly-merge:
+    auto-merge:
 
-      runs-on: ubuntu-latest
+     runs-on: ubuntu-latest
 
-      steps:
+     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Nightly Merge
+      - name: Auto Merge
         uses: robotology/gh-action-nightly-merge@v1.3.1
         with:
           stable_branch: 'master'
           development_branch: 'Development'
           allow_ff: false
-      env:
+     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
