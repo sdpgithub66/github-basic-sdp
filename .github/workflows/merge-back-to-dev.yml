@@ -1,7 +1,7 @@
 name: 'Nightly Merge'
 
 on:
-   push:
+    push:
       branches:
         - master
 
@@ -19,5 +19,4 @@ jobs:
         with:
           stable_branch: 'master'
           development_branch: 'Development'
-          allow_ff: false 
-          
+          allow_ff: true
