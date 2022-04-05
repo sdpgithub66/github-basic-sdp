@@ -23,5 +23,4 @@ jobs:
           allow_ff: false
      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-concurrency: |        
-     github.com/sdpgithub66/github-basic-sdp 
+
