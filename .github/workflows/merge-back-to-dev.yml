@@ -1,4 +1,4 @@
-# Description: 'Automatically merge the stable branch(default master branch)into the development one'
+# Description: Automatically merge the stable branch(default master branch)into the development one.
 
 name: 'Auto Merge'
 
@@ -6,25 +6,20 @@ on:
     push:
       branches:
         - master
-
 jobs:
     auto-merge:
 
-      runs-on: ubuntu-latest
+     runs-on: ubuntu-latest
 
-      steps:
+     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
       - name: Auto Merge
-	    uses: bagbyte/use-private-action@v0.0.2
-        - name:Auto Merge
-        uses:robotology/gh-action-nightly-merge@v1.3.1
-        
+        uses: robotology/gh-action-nightly-merge@v1.3.1
         with:
           stable_branch: 'master'
           development_branch: 'Development'
           allow_ff: false
-		  private-action: 
-          private-action-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-		env:
-        private-action-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+     env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
