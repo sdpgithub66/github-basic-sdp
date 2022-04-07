@@ -22,7 +22,6 @@ jobs:
           stable_branch: 'master'
           development_branch: 'Development'
           allow_ff: false
-          ssh-private-key: |
-           ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN}}
-          repo-mappings: |
-           github.com/sdpgithub66/github-basic-sdp
+env:
+ GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          
