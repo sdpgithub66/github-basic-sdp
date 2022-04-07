@@ -22,6 +22,5 @@ jobs:
           stable_branch: 'master'
           development_branch: 'Development'
           allow_ff: false
-env:
- GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-          
+		env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
